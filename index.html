@@ -1,0 +1,160 @@
+<head>
+<title>Your computer might be at risk.</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">
+var lastimg;
+var pics = ["node1.jpg",
+			"node2.jpg",
+			"node3.jpg",
+			"node4.jpg",
+			"node5.jpg",
+			"node6.jpg",
+			"node7.jpg"];
+
+$( document ).ready(function() {
+ 
+    $("#0").mouseenter(function(){
+    	$("#big_image").attr("src", $("#0").attr("src"));
+    	lastimg = 0;
+  	});
+  	$("#1").mouseenter(function(){
+    	$("#big_image").attr("src", $("#1").attr("src"));
+    	lastimg = 1;
+  	});
+  	$("#2").mouseenter(function(){
+    	$("#big_image").attr("src", $("#2").attr("src"));
+    	lastimg = 2;
+  	});
+  	$("#3").mouseenter(function(){
+    	$("#big_image").attr("src", $("#3").attr("src"));
+    	lastimg = 3;
+  	});
+  	$("#4").mouseenter(function(){
+    	$("#big_image").attr("src", $("#4").attr("src"));
+    	lastimg = 4;
+  	});
+  	$("#5").mouseenter(function(){
+    	$("#big_image").attr("src", $("#5").attr("src"));
+    	lastimg = 5;
+  	});
+  	$("#6").mouseenter(function(){
+    	$("#big_image").attr("src", $("#6").attr("src"));
+    	lastimg = 6;
+  	});
+ 	window.setInterval(function(){
+  		updateimages();
+	}, 15000);
+});
+function updateimages (lastimg) {
+	for (var i = pics.length - 1; i >= 0; i--) {
+		var site = "http://wecan.hasthe.technology/screens/";
+		var seconds = new Date().getTime() / 1000;
+		var file = site.concat(pics[i]);
+		file = file.concat("?time=");
+		file = file.concat(seconds);
+		if (i==lastimg) {
+			$("#big_image").attr("src", file);
+		};
+		$("#"+ i).attr("src", file);
+
+
+	};
+}
+</script>
+
+<style type="text/css">
+	body{
+
+		padding: 0;
+		margin: 0;
+
+	}
+
+	#big_div{
+
+		width:100%;
+		text-align: center;
+	}
+	#big_div img{
+
+		width: 800px;
+		height: 600px;
+	}
+	#smaller{
+		padding: 0;
+	
+		margin:0;
+		margin-top: 20px;
+		width: 100%
+
+	}
+	#smaller img{
+		padding: 0;
+		margin:0;
+		width: 100%;
+	}
+	.img-with-text {
+		display: inline-block;
+    text-align: justify;
+    width: 14%;
+	}
+
+	.img-with-text img {
+    display: block;
+    margin: 0 auto;
+	}
+
+	#popup{
+		position: absolute;
+		padding: 0;
+		margin: 0;
+		bottom: 0px;
+		right: 30px;
+	}
+</style>
+<body>
+
+<div id="big_div">
+	
+	<img src="http://wecan.hasthe.technology/screens/node1.jpg" id="big_image">
+
+</div>
+
+<div id="smaller">
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node1.jpg" id="0">
+		<p>Node 1</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node2.jpg" id="1">
+		<p>Node 2</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node3.jpg" id="2">
+		<p>Node 3</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node4.jpg" id="3">
+		<p>Node 4</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node5.jpg" id="4">
+		<p>Node 5</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node6.jpg" id="5">
+		<p>Node 6</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://wecan.hasthe.technology/screens/node7.jpg" id="6">
+		<p>Node 7</p>
+	</div>
+
+
+
+</div>
+
+<img src="http://i.imgur.com/XGj9ZMH.jpg" width=245 id="popup">
+</body>
