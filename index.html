@@ -15,7 +15,7 @@ var pics = ["node1.jpg",
 			"node7.jpg"];
 
 $( document ).ready(function() {
- 
+ 	$("#version").html('Version '+ currversion);
     $("#0").mouseenter(function(){
     	$("#big_image").attr("src", $("#0").attr("src"));
     	$('#overlay').html('Node 1');
@@ -61,7 +61,7 @@ $( document ).ready(function() {
 	window.setInterval(function(){
   		updateimages();
 	}, 300000);
-	$("#version").html('Version '+ currversion)
+	
 });
 function updateimages () {
 	for (var i = pics.length - 1; i >= 0; i--) {
