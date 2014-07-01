@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
 var currversion = "1.0.7"
-var newversion={};
 var lastimg = 1;
 var pics = ["node1.jpg",
 			"node2.jpg",
@@ -81,12 +80,12 @@ function checkforupdates () {
 	var pageupdate = false;
 	
   	$.getJSON('version.json?'+seconds, function(data) { 
-    newversion=data;
-  });
-  	
-	if (newversion.version != currversion) {
+		if (data.version != currversion) {
 		document.location.reload(true);
 	};
+  });
+  	
+	
 }
 </script>
 
