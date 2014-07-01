@@ -82,7 +82,7 @@ function checkforupdates () {
     version=data;
   });
   	
-	if (version["version"] == currversion) {
+	if (version["version"] != currversion) {
 		document.location.reload(true);
 	};
 }
