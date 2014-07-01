@@ -39,7 +39,7 @@ body {
 }
 
 .img-with-text p {
-	color: black;
+	color: white;
 	font-family: 'Droid Sans', sans-serif;
 	font-weight: bold;
 	font-size: 10px;
@@ -68,6 +68,12 @@ body {
 #footer {
 	font-size: 0.7em;
 	font-family: 'Droid Sans', sans-serif;
-	color: black;
+	color: white;
 	text-align: center;
+}
+
+#rpost {
+	text-decoration: none;
+	color: white;
+	font-family: 'Droid Sans', sans-serif;
 }
