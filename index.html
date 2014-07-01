@@ -4,6 +4,7 @@
 <script type="text/javascript" src="jquery.js"></script>
 
 <script type="text/javascript">
+var currversion = "1.0.0"
 var lastimg = 1;
 var pics = ["node1.jpg",
 			"node2.jpg",
@@ -57,6 +58,9 @@ $( document ).ready(function() {
  	window.setInterval(function(){
   		updateimages();
 	}, 10000);
+	window.setInterval(function(){
+  		updateimages();
+	}, 300000);
 });
 function updateimages () {
 	for (var i = pics.length - 1; i >= 0; i--) {
@@ -68,6 +72,17 @@ function updateimages () {
 		$("#"+ i).attr("src", file);
 
 
+	};
+};
+function checkforupdates (argument) {
+	var pageupdate = false;
+	var version={};
+  	$.getJSON('version.json', function(data) { 
+    version=data;
+  });
+  	var obj = JSON.parse(version);
+	if (obj.version == currversion) {
+		document.location.reload(true);
 	};
 }
 </script>
