@@ -43,6 +43,10 @@ $( document ).ready(function() {
     	$("#big_image").attr("src", $("#6").attr("src"));
     	lastimg = 6;
   	});
+  	$("#popup").click(function(){
+  		$("#popup").hide();
+
+  	});
  	window.setInterval(function(){
   		updateimages();
 	}, 15000);
