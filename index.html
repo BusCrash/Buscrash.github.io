@@ -76,9 +76,10 @@ function updateimages () {
 	};
 };
 function checkforupdates () {
+	var seconds = new Date().getTime() / 1000
 	var pageupdate = false;
 	var version={};
-  	$.getJSON('version.json', function(data) { 
+  	$.getJSON('version.json?'+seconds, function(data) { 
     version=data;
   });
   	
