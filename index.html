@@ -60,11 +60,8 @@ $( document ).ready(function() {
 });
 function updateimages () {
 	for (var i = pics.length - 1; i >= 0; i--) {
-		var site = "http://wecan.hasthe.technology/screens/";
 		var seconds = new Date().getTime() / 1000;
-		var file = site.concat(pics[i]);
-		file = file.concat("?time=");
-		file = file.concat(seconds);
+		var file = "http://wecan.hasthe.technology/screens/" + pics[i] + "?time=" + seconds;
 		if (i==lastimg) {
 			$("#big_image").attr("src", file);
 		};
@@ -127,11 +124,21 @@ function updateimages () {
 
 	#overlay{
 		position: absolute;
+		margin: 0 auto;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		width: 800px;
+		left: 0;
+  		right: 0;
 	}
 </style>
 <body>
+<div id="overlay">
+	<p id="overlaytext">Node 1</p>
+</div>
 <div id="big_div">
-	<p id="overlay">Node 1</p>
+	
 	<img src="http://wecan.hasthe.technology/screens/node1.jpg" id="big_image">
 	
 </div>
