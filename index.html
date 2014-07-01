@@ -17,30 +17,37 @@ $( document ).ready(function() {
  
     $("#0").mouseenter(function(){
     	$("#big_image").attr("src", $("#0").attr("src"));
+    	$('#overlay').html('Node 1');
     	lastimg = 0;
   	});
   	$("#1").mouseenter(function(){
     	$("#big_image").attr("src", $("#1").attr("src"));
+    	$('#overlay').html('Node 2');
     	lastimg = 1;
   	});
   	$("#2").mouseenter(function(){
     	$("#big_image").attr("src", $("#2").attr("src"));
+    	$('#overlay').html('Node 3');
     	lastimg = 2;
   	});
   	$("#3").mouseenter(function(){
     	$("#big_image").attr("src", $("#3").attr("src"));
+    	$('#overlay').html('Node 4');
     	lastimg = 3;
   	});
   	$("#4").mouseenter(function(){
     	$("#big_image").attr("src", $("#4").attr("src"));
+    	$('#overlay').html('Node 5');
     	lastimg = 4;
   	});
   	$("#5").mouseenter(function(){
     	$("#big_image").attr("src", $("#5").attr("src"));
+    	$('#overlay').html('Node 6');
     	lastimg = 5;
   	});
   	$("#6").mouseenter(function(){
     	$("#big_image").attr("src", $("#6").attr("src"));
+    	$('#overlay').html('Node 7');
     	lastimg = 6;
   	});
   	$("#popup").click(function(){
@@ -117,13 +124,16 @@ function updateimages () {
 		bottom: 0px;
 		right: 30px;
 	}
+
+	#overlay{
+		position: absolute;
+	}
 </style>
 <body>
-
 <div id="big_div">
-	
+	<p id="overlay">Node 1</p>
 	<img src="http://wecan.hasthe.technology/screens/node1.jpg" id="big_image">
-
+	
 </div>
 
 <div id="smaller">
