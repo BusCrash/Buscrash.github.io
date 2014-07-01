@@ -1,0 +1,73 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #0000AA;
+}
+
+#big_div {
+	width:100%;
+	text-align: center;
+}
+
+#big_div img {
+	width: 800px;
+	height: 600px;
+}
+
+#smaller {
+	padding: 0;
+	margin:0;
+	margin-top: 20px;
+	width: 100%
+}
+
+#smaller img {
+	padding: 0;
+	margin:0;
+	width: 100%;
+}
+
+.img-with-text {
+	display: inline-block;
+	text-align: center;
+	width: 13.5%;
+}
+
+.img-with-text img {
+	display: block;
+	margin: 0 auto;
+}
+
+.img-with-text p {
+	color: black;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+#popup {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	bottom: 0px;
+	right: 30px;
+}
+
+#overlay {
+	position: absolute;
+	margin: 0 auto;
+	color: black; /* White blended in with background */
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	width: 800px;
+	left: 0;
+  	right: 0;
+}
+
+#footer {
+	font-size: 0.6em;
+	font-family: 'Droid Sans', sans-serif;
+	color: black;
+	text-align: center;
+}
