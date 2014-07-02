@@ -22,32 +22,32 @@ $( document ).ready(function() {
     	lastimg = 0;
   	});
   	$("#1").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5902");
     	$('#overlay').html('Node 2');
     	lastimg = 1;
   	});
   	$("#2").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5903");
     	$('#overlay').html('Node 3');
     	lastimg = 2;
   	});
   	$("#3").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5904");
     	$('#overlay').html('Node 4');
     	lastimg = 3;
   	});
   	$("#4").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5905");
     	$('#overlay').html('Node 5');
     	lastimg = 4;
   	});
   	$("#5").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5906");
     	$('#overlay').html('Node 6');
     	lastimg = 5;
   	});
   	$("#6").click(function(){
-    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5901");
+    	$("#big_image").attr("src", "http://wecan.hasthe.technology/flash/Flashlight.php?port=5907");
     	$('#overlay').html('Node 7');
     	lastimg = 6;
   	});
@@ -67,9 +67,6 @@ function updateimages () {
 	for (var i = pics.length - 1; i >= 0; i--) {
 		var seconds = new Date().getTime() / 1000;
 		var file = "http://wecan.hasthe.technology/screens/" + pics[i] + "?time=" + seconds;
-		if (i==lastimg) {
-			$("#big_image").attr("src", file);
-		};
 		$("#"+ i).attr("src", file);
 
 
