@@ -9,6 +9,17 @@ body {
 	text-align: center;
 }
 
+#switcher {
+	position: absolute;
+	width: 115px;
+	height: 50px;
+	margin-top: 80px;
+	margin-left: 2em;
+	margin-bottom: auto;
+	margin-right: auto;
+	border-color: black;
+}
+
 #big_div img {
 	width: 800px;
 	height: 600px;
@@ -19,6 +30,9 @@ body {
 	margin:0;
 	margin-top: 20px;
 	width: 100%
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 #smaller img {
@@ -46,7 +60,7 @@ body {
 }
 
 #popup {
-	position: absolute;
+	position: fixed;
 	padding: 0;
 	margin: 0;
 	bottom: 0px;
@@ -56,13 +70,24 @@ body {
 #overlay {
 	position: absolute;
 	margin: 0 auto;
-	color: black; /* White blended in with background */
+	color: white;
 	font-family: 'Droid Sans', sans-serif;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 45px;
 	width: 800px;
-	left: 0;
-  	right: 0;
+	left: 2em;
+  	right: auto;
+}
+
+#overlaytext {
+	margin: 0 auto;
+	color: white;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+	font-size: 45px;
+	width: 800px;
+	left: 2em;
+  	right: auto;
 }
 
 #footer {
@@ -73,6 +98,12 @@ body {
 }
 
 #rpost {
+	text-decoration: none;
+	color: white;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+#rposta {
 	text-decoration: none;
 	color: white;
 	font-family: 'Droid Sans', sans-serif;
