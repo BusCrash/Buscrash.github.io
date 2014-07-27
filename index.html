@@ -4,7 +4,7 @@
 <script type="text/javascript" src="jquery.js"></script>
 
 <script type="text/javascript">
-var currversion = "1.0.8"
+var currversion = "1.0.9"
 var lastimg = 1;
 var pics = ["node1.jpg",
 			"node2.jpg",
@@ -19,47 +19,47 @@ var pics = ["node1.jpg",
 $( document ).ready(function() {
  	$("#version").html('Version '+ currversion);
     $("#0").mouseenter(function(){
-    	$("#big_image").attr("src", $("#0").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node1.jpg");
     	$('#overlay').html('Node 1');
     	lastimg = 0;
   	});
   	$("#1").mouseenter(function(){
-    	$("#big_image").attr("src", $("#1").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node2.jpg");
     	$('#overlay').html('Node 2');
     	lastimg = 1;
   	});
   	$("#2").mouseenter(function(){
-    	$("#big_image").attr("src", $("#2").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node3.jpg");
     	$('#overlay').html('Node 3');
     	lastimg = 2;
   	});
   	$("#3").mouseenter(function(){
-    	$("#big_image").attr("src", $("#3").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node4.jpg");
     	$('#overlay').html('Node 4');
     	lastimg = 3;
   	});
   	$("#4").mouseenter(function(){
-    	$("#big_image").attr("src", $("#4").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node5.jpg");
     	$('#overlay').html('Node 5');
     	lastimg = 4;
   	});
   	$("#5").mouseenter(function(){
-    	$("#big_image").attr("src", $("#5").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node6.jpg");
     	$('#overlay').html('Node 6');
     	lastimg = 5;
   	});
   	$("#6").mouseenter(function(){
-    	$("#big_image").attr("src", $("#6").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node7.jpg");
     	$('#overlay').html('Node 7');
     	lastimg = 6;
   	});
   	$("#7").mouseenter(function(){
-    	$("#big_image").attr("src", $("#7").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node8.jpg");
     	$('#overlay').html('Node 8');
     	lastimg = 7;
   	});
   	$("#8").mouseenter(function(){
-    	$("#big_image").attr("src", $("#8").attr("src"));
+    	$("#big_image").attr("src", "http://img.hasthe.technology/screens/node9.jpg");
     	$('#overlay').html('Node 9');
     	lastimg = 8;
   	});
@@ -78,11 +78,12 @@ $( document ).ready(function() {
 function updateimages () {
 	for (var i = pics.length - 1; i >= 0; i--) {
 		var seconds = new Date().getTime() / 1000;
-		var file = "http://img.hasthe.technology/screens/" + pics[i] + "?time=" + seconds;
+		var thumbfile = "http://img.hasthe.technology/screens/thumb/" + pics[i] + "?time=" + seconds;
 		if (i==lastimg) {
-			$("#big_image").attr("src", file);
+			var bigfile = "http://img.hasthe.technology/screens/" + pics[i] + "?time=" + seconds;
+			$("#big_image").attr("src", bigfile);
 		};
-		$("#"+ i).attr("src", file);
+		$("#"+ i).attr("src", thumbfile);
 
 
 	};
@@ -103,7 +104,6 @@ function updateimages () {
 
 <style type="text/css">
 	body{
-
 		padding: 0;
 		margin: 0;
 
@@ -174,39 +174,39 @@ function updateimages () {
 
 <div id="smaller">
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node1.jpg" id="0">
+		<img src="http://img.hasthe.technology/screens/thumb/node1.jpg" id="0">
 		<p>Node 1</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node2.jpg" id="1">
+		<img src="http://img.hasthe.technology/screens/thumb/node2.jpg" id="1">
 		<p>Node 2</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node3.jpg" id="2">
+		<img src="http://img.hasthe.technology/screens/thumb/node3.jpg" id="2">
 		<p>Node 3</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node4.jpg" id="3">
+		<img src="http://img.hasthe.technology/screens/thumb/node4.jpg" id="3">
 		<p>Node 4</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node5.jpg" id="4">
+		<img src="http://img.hasthe.technology/screens/thumb/node5.jpg" id="4">
 		<p>Node 5</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node6.jpg" id="5">
+		<img src="http://img.hasthe.technology/screens/thumb/node6.jpg" id="5">
 		<p>Node 6</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node7.jpg" id="6">
+		<img src="http://img.hasthe.technology/screens/thumb/node7.jpg" id="6">
 		<p>Node 7</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node8.jpg" id="7">
+		<img src="http://img.hasthe.technology/screens/thumb/node8.jpg" id="7">
 		<p>Node 8</p>
 	</div>
 	<div class="img-with-text">
-		<img src="http://img.hasthe.technology/screens/node9.jpg" id="8">
+		<img src="http://img.hasthe.technology/screens/thumb/node9.jpg" id="8">
 		<p>Node 9</p>
 	</div>
 
