@@ -12,7 +12,9 @@ var pics = ["node1.jpg",
 			"node4.jpg",
 			"node5.jpg",
 			"node6.jpg",
-			"node7.jpg"];
+			"node7.jpg",
+			"node8.jpg",
+			"node9.jpg"];
 
 $( document ).ready(function() {
  	$("#version").html('Version '+ currversion);
@@ -50,6 +52,16 @@ $( document ).ready(function() {
     	$("#big_image").attr("src", $("#6").attr("src"));
     	$('#overlay').html('Node 7');
     	lastimg = 6;
+  	});
+  	$("#7").mouseenter(function(){
+    	$("#big_image").attr("src", $("#7").attr("src"));
+    	$('#overlay').html('Node 8');
+    	lastimg = 7;
+  	});
+  	$("#8").mouseenter(function(){
+    	$("#big_image").attr("src", $("#8").attr("src"));
+    	$('#overlay').html('Node 9');
+    	lastimg = 8;
   	});
   	$("#popup").click(function(){
   		$("#popup").hide();
@@ -188,6 +200,14 @@ function checkforupdates () {
 	<div class="img-with-text">
 		<img src="http://img.hasthe.technology/screens/node7.jpg" id="6">
 		<p>Node 7</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://img.hasthe.technology/screens/node8.jpg" id="7">
+		<p>Node 8</p>
+	</div>
+	<div class="img-with-text">
+		<img src="http://img.hasthe.technology/screens/node9.jpg" id="8">
+		<p>Node 9</p>
 	</div>
 
 
