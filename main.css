@@ -91,12 +91,21 @@ b
 	margin: 10px 0 10px 0;
 	padding: 0;
 }
-.back_mask {
-    z-index: 10;
+#back_mask {
+    z-index: -990;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background: url(bg_mask.png);
+}
+#back_maskdark {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(bg_maskdark.png);
 }
