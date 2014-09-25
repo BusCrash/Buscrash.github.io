@@ -44,8 +44,10 @@
 		this.x2 = Math.random()*W
 		this.y1 = Math.random()*H
 		this.y2 = Math.random()*H
-		this.velx = Math.random()*50-25;
-		this.vely = Math.random()*50-25;
+		this.velx1 = Math.random()*50-25;
+		this.vely1 = Math.random()*50-25;
+		this.velx2 = Math.random()*50-25;
+		this.vely2 = Math.random()*50-25;
 		this.life = Math.random()*200
 		this.color = getRandomColor();
 
@@ -76,8 +78,10 @@
 				
 			};
 
-			l.y1+= l.vely;
-			l.x2+= l.velx;
+			l.y1+= l.vely1;
+			l.x2+= l.velx2;
+			l.y2+= l.vely2;
+			l.x1+= l.velx1;
 		};
 		draw();
 		requestAnimationFrame(gameLoop);
