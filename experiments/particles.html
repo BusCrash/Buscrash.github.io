@@ -16,7 +16,7 @@
 		H = 500,
 		emitters = [];
 
-		emitters[0] = new emitter(400,400, 2, 5, 2, 5, 200, 0);
+		emitters[0] = new emitter(400,400, 2, 5, 2, 5, 10, 0);
 
 		canvas.width = W;
 		canvas.height= H;
@@ -35,7 +35,7 @@
 
 		this.particles = []
 
-		for (var i = 0; i < 300; i++) {
+		for (var i = 0; i < 100; i++) {
 			this.particles.push(new particle(this.x, this.y,ux,uy,lx,ly,ul,ll));
 		};
 
@@ -58,14 +58,19 @@
 
 		for (var x = 0; x < emitters.length; x++) {
 			var e = emitters[x];
+			
 			for (var i = 0; i < e.particles.length; i++) {
 				var p = e.particles[i];
 				ctx.beginPath();
 				ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI, false);
-				var opacity = p.life/200
-				ctx.fillStyle= rgba(255,255,255,opacity);
+				var opacity = p.life/e.ul
+				ctx.fillStyle= rgba(255,100,100,opacity);
 				ctx.fill();
 			};
+			ctx.beginPath();
+			ctx.arc(e.x, e.y, 5, 0, 2 * Math.PI, false);
+			ctx.fillStyle= rgba(255,255,255,1);
+			ctx.fill();
 		};
 
 	}
