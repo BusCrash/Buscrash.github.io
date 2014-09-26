@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="refresh" content="500; URL=file:///C:/Users/Rab/Desktop/Projects/Web/particles.html">
 	<meta charset="UTF-8">
 	<title>Particles</title>
 </head>
@@ -16,7 +15,7 @@
 		H = 500,
 		emitters = [];
 
-		emitters[0] = new emitter(250,250, 0, 1, 0, 1, 100, 0);
+		emitters[0] = new emitter(250,250, 0, 1, 0, 1, 100, 0,232,35,173);
 		emitters[1] = new emitter(150,300, 1, 0, 1, 0, 100, 0);
 		emitters[2] = new emitter(10,10, 1, 1, 1, 1, 300, 0);
 
@@ -24,7 +23,7 @@
 		canvas.height= H;
 
 		
-	function emitter(x,y,ux,uy,lx,ly,ul,ll)
+	function emitter(x,y,ux,uy,lx,ly,ul,ll,r,g,b)
 	{
 		this.x = x;
 		this.y = y;
@@ -34,6 +33,9 @@
 		this.ly = ly;
 		this.ul = ul;
 		this.ll = ll;
+		this.r = r;
+		this.g = g;
+		this.b = b;
 
 		this.particles = []
 
@@ -66,7 +68,7 @@
 				ctx.beginPath();
 				ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI, false);
 				var opacity = p.life/e.ul
-				ctx.fillStyle= rgba(255,100,0,opacity);
+				ctx.fillStyle= rgba(e.r,e.g,e.b,opacity);
 				ctx.fill();
 			};
 			ctx.beginPath();
