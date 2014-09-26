@@ -16,8 +16,7 @@
 		H = 500,
 		emitters = [];
 
-		emitters[0] = new emitter(200,200, 5, 5, -5,-5, 200, 0);
-		emitters[1] = new emitter(400,400, 2, 5, 2, 5, 200, 0);
+		emitters[0] = new emitter(400,400, 2, 5, 2, 5, 200, 0);
 
 		canvas.width = W;
 		canvas.height= H;
@@ -81,6 +80,8 @@
 	{
 		for (var x = 0; x < emitters.length; x++) {
 			var e = emitters[x];
+
+			e.x = e.y -= 2;
 		
 			for (var i = 0; i < e.particles.length; i++) {
 				var p = e.particles[i];
