@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="refresh" content="500; URL=file:///C:/Users/Rab/Desktop/Projects/Web/particles.html">
+	<meta charset="UTF-8">
+	<title>Particles</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+	
+	var canvas = document.getElementById('canvas'),
+		ctx = canvas.getContext('2d'),
+		W = 500,
+		H = 500,
+		emitters = [];
+
+		emitters[0] = new emitter(200,200, 5, 5, -5,-5, 200, 0);
+		emitters[1] = new emitter(400,400, 2, 5, 2, 5, 200, 0);
+
+		canvas.width = W;
+		canvas.height= H;
+
+		
+	function emitter(x,y,ux,uy,lx,ly,ul,ll)
+	{
+		this.x = x;
+		this.y = y;
+		this.ux = ux;
+		this.uy = uy;
+		this.lx = lx;
+		this.ly = ly;
+		this.ul = ul;
+		this.ll = ll;
+
+		this.particles = []
+
+		for (var i = 0; i < 300; i++) {
+			this.particles.push(new particle(this.x, this.y,ux,uy,lx,ly,ul,ll));
+		};
+
+	}
+
+	function particle(x, y,ux,uy,lx,ly,ul,ll)
+	{
+		this.x = x;
+		this.y = y;
+		this.life = Math.random()*ul*2 + ll;
+		this.velx = Math.random()*ux*2 + lx;
+		this.vely = Math.random()*uy*2 + ly;
+	}
+
+	function draw()
+	{
+		ctx.fillStyle= "black";
+		ctx.fillRect(0,0,W,H);
+		ctx.fill();
+
+		for (var x = 0; x < emitters.length; x++) {
+			var e = emitters[x];
+			for (var i = 0; i < e.particles.length; i++) {
+				var p = e.particles[i];
+				ctx.beginPath();
+				ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI, false);
+				var opacity = p.life/200
+				ctx.fillStyle= rgba(255,255,255,opacity);
+				ctx.fill();
+			};
+		};
+
+	}
+	function rgba(r, g, b,a)
+	{
+		r = Math.floor(r);
+		g = Math.floor(g);
+		b = Math.floor(b);
+		return ["rgba(",r,",",g,",",b,",",a,")"].join("");
+	}
+	function particleLoop()
+	{
+		for (var x = 0; x < emitters.length; x++) {
+			var e = emitters[x];
+		
+			for (var i = 0; i < e.particles.length; i++) {
+				var p = e.particles[i];
+				if (p.life <= 0)
+				{
+					emitters[x].particles[i] = new particle(e.x, e.y, e.ux,e.uy,e.lx,e.ly,e.ul,e.ll);
+				};
+				p.x += p.velx;
+				p.y += p.vely;
+				p.life -= 2;
+			};
+		};
+		draw();
+		requestAnimationFrame(particleLoop);
+	}
+	requestAnimationFrame(particleLoop);
+	
+
+</script>
+</body>
+</html>
