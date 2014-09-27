@@ -77,11 +77,11 @@ window.onload=function(){
 			
 			for (var i = 0; i < e.particles.length; i++) {
 				var p = e.particles[i];
-				ctx.beginPath();
-				ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI, false);
+				
 				var opacity = p.life/e.ul
 				ctx.fillStyle= rgba(e.r,e.g,e.b,opacity);
-				ctx.fill();
+				ctx.fillRect(p.x,p.y,5,5)
+			
 			};
 			ctx.beginPath();
 			ctx.arc(e.x, e.y, 5, 0, 2 * Math.PI, false);
