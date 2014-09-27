@@ -27,8 +27,7 @@ window.onload=function(){
 						Math.floor(Math.random()*5),
 						Math.floor(Math.random()*-5), 
 						Math.floor(Math.random()*-5), 
-						300, 
-						0, 
+						150, 
 						Math.floor(Math.random()*255), 
 						Math.floor(Math.random()*255), 
 						Math.floor(Math.random()*255))
@@ -37,7 +36,7 @@ window.onload=function(){
 		canvas.height= H;
 
 		
-	function emitter(x,y,ux,uy,lx,ly,ul,ll,r,g,b)
+	function emitter(x,y,ux,uy,lx,ly,ul,r,g,b)
 	{
 		this.x = x;
 		this.y = y;
@@ -46,7 +45,6 @@ window.onload=function(){
 		this.lx = lx;
 		this.ly = ly;
 		this.ul = ul;
-		this.ll = ll;
 		this.r = r;
 		this.g = g;
 		this.b = b;
@@ -54,16 +52,16 @@ window.onload=function(){
 		this.particles = []
 
 		for (var i = 0; i < 100; i++) {
-			this.particles.push(new particle(-100, -100,0,0,0,0,ul,ll));
+			this.particles.push(new particle(-100, -100,0,0,0,0,ul));
 		};
 
 	}
 
-	function particle(x, y,ux,uy,lx,ly,ul,ll)
+	function particle(x, y,ux,uy,lx,ly,ul)
 	{
 		this.x = x;
 		this.y = y;
-		this.life = Math.random()*ul*2 + ll;
+		this.life = Math.random()*ul;
 		this.velx = Math.random()*ux*2 + lx;
 		this.vely = Math.random()*uy*2 + ly;
 	}
