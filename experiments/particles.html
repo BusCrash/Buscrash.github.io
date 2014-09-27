@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta charset="UTF-8">
 	<title>Particles</title>
 </head>
-<body>
+<body style='overflow:hidden;margin:0;'>
 <canvas id="canvas"></canvas>
 
 <script>
 window.onload=function(){	
 	var canvas = document.getElementById('canvas'),
 		ctx = canvas.getContext('2d'),
-		W = 500,
-		H = 500,
+		W = window.innerWidth,
+		H = window.innerHeight,
 		emitters = [];
 
 
