@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta charset="UTF-8">
+	
+	<title>The 90s</title>
+	<style>
+	body{
+		margin:0;
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+	<canvas id="mainCanvas"></canvas>
+	<script type="text/javascript">
+	
+	var canvas,
+		ctx,
+		W = screen.width,
+		H = screen.height,
+		lines = [],
+		number = 20;
+
+		for (var i = 0; i < number; i++) {
+			lines.push(new line())
+		};
+		
+	
+
+	canvas = document.getElementById('mainCanvas');
+	canvas.height = H;
+	canvas.width = W;
+	ctx = canvas.getContext('2d');
+
+
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,W,H)
+	ctx.fill()
+
+	function line()
+	{
+		this.x1 = Math.random()*W
+		this.x2 = Math.random()*W
+		this.y1 = Math.random()*H
+		this.y2 = Math.random()*H
+		this.velx1 = Math.random()*50-25;
+		this.vely1 = Math.random()*50-25;
+		this.velx2 = Math.random()*50-25;
+		this.vely2 = Math.random()*50-25;
+		this.life = Math.random()*200
+		this.color = getRandomColor();
+
+	}
+	function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+	}
+
+	function gameLoop()
+	{
+		for (var i = 0; i < lines.length; i++) {
+			var l = lines[i];
+			if (l.life > 0) 
+			{
+				l.life--;
+				
+			}
+			else
+			{	
+				lines[i] = new line();
+				
+				
+				
+			};
+
+			l.y1+= l.vely1;
+			l.x2+= l.velx2;
+			l.y2+= l.vely2;
+			l.x1+= l.velx1;
+		};
+		draw();
+		requestAnimationFrame(gameLoop);
+	}
+
+	function draw()
+	{
+
+		for (var i = 0; i < lines.length; i++) {
+
+			var l = lines[i]
+	
+			ctx.strokeStyle = l.color;
+			ctx.beginPath();
+			ctx.moveTo(l.x1, l.y1);
+			ctx.lineTo(l.x2, l.y2);
+	    	ctx.stroke();
+			
+		
+		};
+		
+	}
+
+	requestAnimationFrame(gameLoop);
+
+
+
+
+
+	</script>
+
+
+</body>
+</html>
